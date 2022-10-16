@@ -23,15 +23,87 @@
     <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/jquery.datetimepicker.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/hero.css' %}">
 </head>
 <body>
-    <!-- Preloader Starts -->
+    <div class="slideshow-container">
+        <!--NAV-BAR STARTS HERE-->
+      <div class="wrapper">
+        <div class="top_nav">
+            <div class="left">
+              <div class="logo">
+                <a href="#"><img src="{% static 'assets/images/logo/web_foam2.png' %}" alt="logo"></a>
+            </div>
+          </div> 
+          <div class="right">
+            <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Catalog</a></li>
+              <li><a href="#">Request Quote</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom_nav">
+          <form class="search_bar">
+            <input type="text" placeholder="Search">
+            <button type="submit">GO</button>
+          </form>
+        
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Products</a>
+             <!-- <ul>
+                <li><a href="#">first</a></li>
+                <li><a href="#">second</a></li>
+                <li><a href="#">third</a></li>
+                <li><a href="#">Fourth</a></li>
+              </ul> -->
+            </li>
+            <li><a href="#">Map</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+      </div>
+ <!--NAV-BAR ENDS HERE-->
+ <div class="mySlides fade">
+    <img src="{% static 'assets/images/cover.jpg' %}" style="width: 100%;height: 600px">
+
+</div>
+<div class="mySlides fade">
+
+    <img src="https://i.imgur.com/QtMelqo.jpg" style="width: 100%;height: 600px">
+
+</div>
+<div class="mySlides fade">
+
+    <img src="https://i.imgur.com/IO2tBwy.jpg" style="width: 100%;height: 600px">
+
+</div>
+ <div style="text-align:center; margin:-5vh;">
+
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+
+</div>
+<a class="prev" onclick="prevSlide()">&#10094;</a>
+<a class="next" onclick="showSlides()">&#10095;</a>
+
+
+</div> 
+</div><br /><br /><br /><br /><br />
+<div class="div1">Div Right</div>
+<div class="div2">Div Left</div>
+<div class="div3">Div Middle</div>
+
+    <!-- Preloader Starts
     <div class="preloader">
         <div class="spinner"></div>
     </div>
-    <!-- Preloader End -->
+     Preloader End -->
 
-    <!-- Header Area Starts -->
+    <!-- Header Area Starts 
 	<header class="header-area">
         <div class="container">
             <div class="row">
@@ -71,20 +143,20 @@
             </div>
         </div>
     </header>
-    <!-- Header Area End -->
+     Header Area End -->
 
-    <!-- Banner Area Starts -->
+    <!-- Banner Area Starts 
     <section class="banner-area text-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <!--<h6>the most interesting food in the world</h6>
+                    <h6>the most interesting food in the world</h6>
                     <h1>Discover the <span class="prime-color">flavors</span><br>  
-                    <span class="style-change">of <span class="prime-color">food</span>fun</span></h1> -->
+                    <span class="style-change">of <span class="prime-color">food</span>fun</span></h1> 
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Banner Area End -->
 
     <!-- Welcome Area Starts
@@ -513,6 +585,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{% static 'assets/js/vendor/jquery.datetimepicker.full.min.js' %}"></script>
     <script src="{% static 'assets/js/vendor/jquery.nice-select.min.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/hero.js' %}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
