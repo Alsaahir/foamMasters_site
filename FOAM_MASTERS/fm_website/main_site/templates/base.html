@@ -9,11 +9,11 @@
 
     
     <!-- Page Title -->
-    {% block title %}<title></title>{% endblock title %}
+    {% block title %}<title>FOAM MASTERS</title>{% endblock title %}
 
 
-      <!-- Favicon -->
-      <link rel="shortcut icon" href="{% static 'assets/images/logo/favicon.png' %}" type="image/x-icon">
+      <!-- Favicon 
+      <link rel="shortcut icon" href="{% static 'assets/images/logo/favicon.png' %}" type="image/x-icon">-->
 
       <!-- TOP BAR-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -32,8 +32,64 @@
         <div class="preloader">
             <div class="spinner"></div>
         </div>
-    <!-- Preloader End -->
-       <!--NAV-BAR STARTS HERE-->
+    <!-- Preloader End 
+
+    
+    <!-- Header Area Starts -->
+	<header class="header-area">
+        <div class="container"> 
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="logo-area">
+                        <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/web_foam2.png' %}" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="custom-navbar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>  
+                    <div class="main-menu">
+                        <ul>
+                            <li class="active"><a href="{% url 'index' %}">home</a></li>
+                            <li><a href="{% url 'about' %}">about</a></li>
+                            <li><a href="{% url 'contact_us' %}">Contacts</a></li>
+                            <li><a href="#">Products</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-home.html">Blog Home</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Catalog</a></li>
+                        </ul>
+                        <form class="search_bar">
+                            <input type="text" placeholder="Search">
+                            <button type="submit" class="fas fa-search"></button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+        {% block banner %}
+        <!-- Banner Area Starts -->
+        <section class="banner-area text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h6>the most interesting food in the world</h6>
+                        <h1>Discover the <span class="prime-color">flavors</span><br>  
+                        <span class="style-change">of <span class="prime-color">food</span>fun</span></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Banner Area End -->
+        {% endblock banner %}
+
+     <!--  NAV-BAR STARTS HERE
        <div class="wrapper">
           <div class="top_nav">
               <div class="left">
@@ -66,13 +122,13 @@
                   <li><a href="#">second</a></li>
                   <li><a href="#">third</a></li>
                   <li><a href="#">Fourth</a></li>
-                </ul> -->
+                </ul> 
               </li>
               <li><a href="#">Map</a></li>
               <li><a href="#">Login</a></li>
             </ul>
         </div>
-   <!--NAV-BAR ENDS HERE-->
+   NAV-BAR ENDS HERE-->
    {% block content %}
    
    {% endblock content %}

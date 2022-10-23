@@ -5,36 +5,56 @@
 {% block title %}<title>FOAM MASTERS</title>{% endblock title %}
          
 {% block content %}
- <div class="slideshow-container">
-    <div class="mySlides fade">
-        <img src="{% static 'assets/images/cover.jpg' %}" style="width: 100%;height: 600px">
+{% block banner %}
+{% endblock banner %}
 
+<!--image slider start-->
+<div class="slider">
+    <div class="slides">
+        <!--radio buttons start-->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <!--radio buttons end-->
+
+      <!--slide images start-->
+      <div class="slide first">
+        <img src="{% static 'assets/images/cover.jpg' %}" alt="">
+      </div>
+      <div class="slide">
+        <img src="{% static 'assets/images/cover2.jpg' %}"x alt="">
+      </div>
+      <div class="slide">
+        <img src="{% static 'assets/images/bg.jpg' %}" alt="">
+      </div>
+      <div class="slide">
+        <img src="https://i.imgur.com/IO2tBwy.jpg" alt="">
+      </div>
+      <!--slide images end-->
+      <!--automatic navigation start-->
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+      </div>
+      <!--automatic navigation end-->
     </div>
-    <div class="mySlides fade">
-
-        <img src="{% static 'assets/images/cover2.jpg' %}" style="width: 100%;height: 600px">
-
+    <!--manual navigation start-->
+    <div class="navigation-manual">
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+      <label for="radio4" class="manual-btn"></label>
     </div>
-    <div class="mySlides fade">
+    <!--manual navigation end-->
+  </div>
+  <!--image slider end-->
 
-        <img src="{% static 'assets/images/bg.jpg' %}" style="width: 100%;height: 600px">
-
-    </div>
-    <div style="text-align:center; margin:-5vh;">
-
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-
-    </div>
-    <a class="prev" onclick="prevSlide()">&#10094;</a>
-    <a class="next" onclick="showSlides()">&#10095;</a>
-</div>
-
-    <div class="div1">Div Right</div>
+   <div class="div1">Div Right</div>
     <div class="div2">Div Left</div>
     <div class="div3">Div Middle</div>
-
 
     <!-- Reservation Area Starts -->
     <div class="reservation-area section-padding text-center">
