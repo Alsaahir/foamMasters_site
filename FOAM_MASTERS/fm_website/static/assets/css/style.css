@@ -67,6 +67,7 @@ body {
 
 #radio1:checked ~ .first{
   margin-left: 0;
+
 }
 
 
@@ -85,7 +86,7 @@ body {
 /*css for automatic navigation*/
 
 .navigation-auto{
-  position: absolute;
+  position: relative;
   display: flex;
   width: 800px;
   justify-content: center;
@@ -124,33 +125,44 @@ body {
 
 
 
-/* 3 PART SECTION */
+/* THREE PART SECTION */
 
-.div1 {
+.div_right {
 background-color: #0099ff;
-height: 140px;
+height: 150px;
 float: right;
-width: 33.33%;
+width: 30.40%;
 margin-right: 40px;
 position: relative;
+transform: translate(0, -50%);
+border-left: 40px solid #24478f;
+border-top: 75px solid transparent;
+border-bottom: 75px solid transparent;
 }
 
-.div2 {
+.div_left {
 background-color: #0099ff;
-height: 140px;
+height: 150px;
 float: left;
-width: 33.33%;
+width: 30.40%;
 margin-left: 40px;
 position: relative;
+transform: translate(0, -50%);
+
+border-right: 40px solid #24478f;
+border-top: 75px solid transparent;
+border-bottom: 75px solid transparent;
 }
 
-.div3 {
+.div_middle {
 background-color: #24478f;
-height: 140px;
+height: 150px;
 width: 33.33%;
 margin: 0 auto;
 position: relative;
+transform: translate(0, -50%);
 }
+
 /* 3 PART SECTION  ENDS HERE*/
 
 h1 {
@@ -191,8 +203,9 @@ h6 {
   color: #fff;
   font-size: 16px !important;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
+  padding-bottom: 60px;
 }
 ul {
   margin: 0;
@@ -260,6 +273,7 @@ textarea:focus {
 .main-menu ul {
   float: right;
 }
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   .main-menu ul {
     display: none;
@@ -300,12 +314,57 @@ textarea:focus {
     z-index: 4;
     background: #000;
     width: 100%;
+    color: #fff;
     padding: 20px 20px 30px;
   }
+  
+/* THREE PART SECTION CSS FOR SMALL SCREENS */
+  .div_left{
+    border: none;
+    width: 100%;
+    float: none;
+    overflow: hidden;
+    margin: 0;
+    transform: none;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    background-color: #24478f;
+  }
+  .div_right{
+    border: none;
+    width: 100%;
+    float: none;
+    overflow: hidden;
+    margin: 0;
+    transform: none;
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+  }
+  .div_middle{
+    border: none;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    transform: none;
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    background-color: #0099ff;
+  }
+
 }
 .main-menu ul li {
   display: inline;
   position: relative;
+  color: #fff;
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .main-menu ul li {
@@ -323,7 +382,7 @@ textarea:focus {
   }
 }
 .main-menu ul li a {
-  color: #131230;
+  color: #fff;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
@@ -490,7 +549,7 @@ textarea:focus {
   border-radius: 0;
 }
 .banner-area {
-  padding: 400px 0 350px;
+  padding: 250px 0 350px;
   background-color: #b0b0b0;
   background-repeat: no-repeat;
   background-position: center;
@@ -499,7 +558,7 @@ textarea:focus {
   position: relative;
 }
 .banner-area .prime-color {
-  color: #ffb606;
+  color: rgb(165, 42, 42);
 }
 .banner-area .style-change {
   font-style: normal;
