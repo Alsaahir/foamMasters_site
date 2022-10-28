@@ -13,7 +13,7 @@ body {
 /* Slide show CSS */
 .slider{
   width: 100%;
-  height: 700px;
+  height: 100vh;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -44,9 +44,10 @@ body {
 .navigation-manual{
   position: absolute;
   width: 800px;
-  margin-top: -40px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
+  margin-left: 300px;
 }
 
 .manual-btn{
@@ -199,6 +200,7 @@ h5 {
   font-size: 20px !important;
   font-weight: 700;
 }
+
 h6 {
   color: #fff;
   font-size: 16px !important;
@@ -206,7 +208,15 @@ h6 {
   font-weight: 400;
   text-transform: uppercase;
   padding-bottom: 60px;
+  animation-timing-function: ease-out;
+  animation: mymove 5s;
 }
+
+@keyframes mymove {
+  from {right: 0px;}
+  to {right: 350px;}
+}
+
 ul {
   margin: 0;
   padding: 0;
