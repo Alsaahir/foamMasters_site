@@ -139,6 +139,13 @@ transform: translate(0, -50%);
 border-left: 40px solid #24478f;
 border-top: 75px solid transparent;
 border-bottom: 75px solid transparent;
+justify-content: center;
+align-content: center;
+}
+.div_right img {
+  height: 350px;
+  transform: translate(0, -50%);
+  padding-bottom: 45px;
 }
 
 .div_left {
@@ -155,6 +162,12 @@ border-top: 75px solid transparent;
 border-bottom: 75px solid transparent;
 }
 
+.div_left img {
+  height: 350px;
+  transform: translate(0, -50%);
+  padding-bottom: 30px;
+}
+
 .div_middle {
 background-color: #24478f;
 height: 150px;
@@ -162,6 +175,11 @@ width: 33.33%;
 margin: 0 auto;
 position: relative;
 transform: translate(0, -50%);
+}
+.div_middle img {
+  height: 455px;
+  transform: translate(0, -50%);
+  padding-top: 120px;
 }
 
 /* 3 PART SECTION  ENDS HERE*/
@@ -504,7 +522,7 @@ textarea:focus {
   background: #000;
   color: #fff;
   position: absolute;
-  opacity: .8;
+  opacity: .7;
   top: 20px;
   left: 50%;
   width: 80%;
@@ -566,6 +584,7 @@ textarea:focus {
   background-image: url("../images/banner-bg.jpg");
   background-size: cover;
   position: relative;
+  height: 400px;
 }
 .banner-area .prime-color {
   color: rgb(165, 42, 42);
@@ -942,6 +961,7 @@ textarea:focus {
 }
 .footer-widget {
   background: #131230;
+  height: 400px;
 }
 .footer-widget .single-widget1 {
   padding-right: 30px;
@@ -1569,7 +1589,7 @@ textarea:focus {
 }
 .into-icon i {
   font-size: 20px;
-  color: #ffb606;
+  color: #f6ff00;
   margin-right: 20px;
 }
 .contact-form form .left,

@@ -56,11 +56,16 @@
                             <li><a href="{% url 'about' %}">about</a></li>
                             <li><a href="#">Products</a>
                                 <ul class="sub-menu">
-                                    <li><a href="blog-home.html">Blog Home</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="#">Dream Foam Collection</a></li>
+                                    <li><a href="#">Deluxe Range</a></li>
+                                    <li><a href="#">Standard Range</a></li>
+                                    <li><a href="#">Resteeze Range</a></li>
+                                    <li><a href="#">Pillows and Bedsheets</a></li>
+                                    <li><a href="#">Furniture</a></li>
                                 </ul>
                             </li>
                             <li><a href="{% url 'contact_us' %}">Contacts</a></li>
+                            <li><a href="{% url 'about' %}">My account</a></li>
                           
                             <li><a href="#">Catalog</a></li>
                         </ul>
@@ -90,49 +95,36 @@
         <!-- Banner Area End -->
         {% endblock banner %}
 
-     <!--  NAV-BAR STARTS HERE
-       <div class="wrapper">
-          <div class="top_nav">
-              <div class="left">
-                <div class="logo">
-                  <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/web_foam2.png' %}" alt="logo"></a>
-              </div>
-            </div> 
-            <div class="right">
-              <ul>
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">Company profile</a></li>
-                <li><a href="#">Catalog</a></li>
-                <li><a href="#">Request Quote</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="bottom_nav">
-            <form class="search_bar">
-              <input type="text" placeholder="Search">
-              <button type="submit">GO</button>
-            </form>
-          
-            <ul>
-              <li><a href="{% url 'index' %}">Home</a></li>
-              <li><a href="{% url 'about' %}">About</a></li>
-              <li><a href="{% url 'contact_us' %}">Contacts</a></li>
-              <li><a href="#">Products</a>
-               <!-- <ul>
-                  <li><a href="#">first</a></li>
-                  <li><a href="#">second</a></li>
-                  <li><a href="#">third</a></li>
-                  <li><a href="#">Fourth</a></li>
-                </ul> 
-              </li>
-              <li><a href="#">Map</a></li>
-              <li><a href="#">Login</a></li>
-            </ul>
-        </div>
-   NAV-BAR ENDS HERE-->
    {% block content %}
    
    {% endblock content %}
+   <!--SUBSCRIBE TO MAIL LIST -->
+   <section class="subscribe_to_mail">
+    <div>
+            <!-- subscribtion foam Starts -->
+    <section class="contact-form section-padding3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <form action="#">
+                        <div class="left">
+                            <h5>BULK/CUSTOM ORDERS? CALL OUR TEAM TODAY</h5>
+                            <p>SALES TEAM AT (+260) 211-286 776 OR EMAIL US ON sales@foamMasters.com.zm</p>
+                        </div>
+                        <div class="right">
+                            <input type="email" placeholder="subscribe to our mail list" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required>
+                            <button type="submit" class="template-btn">subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subscribtion foam Ends -->
+    <!-- Contact Form End -->
+    </div>
+   </section>
+   <!--SUBSCRIBE TO MAIL LIST ENDS HERE-->
 
     <!-- Footer Area Starts -->
     <footer class="footer-area">
@@ -141,7 +133,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="single-widget single-widget1">
-                            <a href="index.html"><img src="assets/images/logo/logo2.png" alt=""></a>
+                            <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/web_foam2.png' %}" alt="logo"></a>
                             <p class="mt-3">Which morning fourth great won't is to fly bearing man. Called unto shall seed, deep, herb set seed land divide after over first creeping. First creature set upon stars deep male gathered said she'd an image spirit our</p>
                         </div>
                     </div>
@@ -176,11 +168,10 @@
                     </div>
                     <div class="col-md-4">
                         <div class="single-widget single-widget3">
-                            <h5 class="mb-4">opening hours</h5>
-                            <p>Monday ...................... Closed</p>
-                            <p>Tue-Fri .............. 10 am - 12 pm</p>
-                            <p>Sat-Sun ............... 8 am - 11 pm</p>
-                            <p>Holidays ............. 10 am - 12 pm</p>
+                            <h5 class="mb-4" style="margin-left: 10px;">LICENSED EXPORTER</h5>
+                            <p style="margin-left: 10px;">Licensed to export internationally to all SADC countries & members of COMESA.</p>
+                            <center><img src="{% static 'assets/images/comesa.png' %}" alt="" style="height: 150px; float: left;"></center>
+                            <center><img src="{% static 'assets/images/sadc.png' %}" alt="" style="height: 150px; float: right; margin-right: 73px;"></center>
                         </div>
                     </div>
                 </div>
