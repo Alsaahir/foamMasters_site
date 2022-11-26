@@ -3,7 +3,7 @@
 
 
 body {
-  color: #777;
+  color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -226,9 +226,14 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  padding-bottom: 60px;
   animation-timing-function: ease-out;
-  animation: mymove 5s;
+  background: #000;
+  opacity: .7;
+  height: 40px;
+  margin-left: 35%;
+  padding-top: 10px;
+  width: 300px;
+  border-radius: 5em;
 }
 
 @keyframes mymove {
@@ -607,7 +612,7 @@ textarea:focus {
   background-color: #b0b0b0;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../images/banner-bg.jpg");
+  background-image: url("../images/web01.jpg");
   background-size: cover;
   position: relative;
   height: 400px;
@@ -769,7 +774,7 @@ textarea:focus {
   color: #131230;
 }
 .reservation-area {
-  background-image: url("../images/reservation-bg.jpg");
+  background-image: url("../images/web_203.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -986,7 +991,7 @@ textarea:focus {
   clear: both;
 }
 .footer-widget {
-  background: #131230;
+  background-image: url("../images/web_23.jpg");
   height: 400px;
 }
 .footer-widget .single-widget1 {
@@ -999,7 +1004,7 @@ textarea:focus {
   }
 }
 .footer-widget .single-widget h5 {
-  color: #ffb606;
+  color: #00aeef;
 }
 .footer-widget .single-widget i {
   color: inherit;
@@ -1016,7 +1021,7 @@ textarea:focus {
   color: #fff;
 }
 .footer-copyright .color {
-  color: #ffb606;
+  color: #fff;
 }
 .footer-copyright ul {
   float: right;
@@ -1063,7 +1068,7 @@ textarea:focus {
   color: inherit;
 }
 .footer-copyright2 ul i {
-  color: #777 !important;
+  color: #fff !important;
 }
 .footer-copyright2 ul i:hover {
   color: #ffb606 !important;
@@ -1569,7 +1574,7 @@ textarea:focus {
   border-radius: 0px;
   width: 100%;
   font-size: 14px;
-  color: #777777;
+  color: #fff;
   border: 1px solid transparent;
 }
 .comment-form .form-control:focus {
@@ -1582,19 +1587,19 @@ textarea:focus {
 }
 .comment-form ::-webkit-input-placeholder {
   font-size: 13px;
-  color: #777;
+  color: #fff;
 }
 .comment-form ::-moz-placeholder {
   font-size: 13px;
-  color: #777;
+  color: #fff;
 }
 .comment-form :-ms-input-placeholder {
   font-size: 13px;
-  color: #777;
+  color: #fff;
 }
 .comment-form :-moz-placeholder {
   font-size: 13px;
-  color: #777;
+  color: #fff;
 }
 .footer-area.footer {
   background: #131230;
@@ -1671,13 +1676,17 @@ textarea:focus {
 }
 
 /* Subscription form css */
+.subscription-form {
+  height: fit-content;
+}
 .subscription-form form .left,
 .commentform-area form .left {
   width: 48%;
   float: left;
   overflow: hidden;
   margin-right: 4%;
-  margin-top: 60px;
+  margin-top: 70px;
+  margin-bottom: auto;
 }
 @media (max-width: 575.98px) {
   .subscription-form form .left,
@@ -2025,7 +2034,7 @@ h6 {
 .typography h4,
 .typography h5,
 .typography h6 {
-  color: #777777;
+  color: #fff;
 }
 .button-area .border-top-generic {
   padding: 70px 15px;
@@ -2369,7 +2378,7 @@ h6 {
 }
 .ordered-list li span {
   font-weight: 300;
-  color: #777777;
+  color: #fff;
 }
 .ordered-list-alpha li {
   margin-left: 30px;
@@ -2380,7 +2389,7 @@ h6 {
 }
 .ordered-list-alpha li span {
   font-weight: 300;
-  color: #777777;
+  color: #fff;
 }
 .ordered-list-roman li {
   margin-left: 30px;
