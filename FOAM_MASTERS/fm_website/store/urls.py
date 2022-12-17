@@ -12,3 +12,7 @@ urlpatterns = [
 	path('process_order/', views.processOrder, name="process_order"),
 
 ]
+
+# urlpatterns += path('',
+#     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+#     'document_root': settings.MEDIA_ROOT}))
