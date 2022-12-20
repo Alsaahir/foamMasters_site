@@ -281,6 +281,3 @@ setInterval(function(){
     $(".preloader").fadeOut(500);
   });
 })(jQuery);
-
-
-

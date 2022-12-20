@@ -26,6 +26,8 @@
       <link rel="stylesheet" href="{% static 'assets/css/jquery.datetimepicker.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/hero.css' %}">
+
+
 </head>
   <body>
     <!-- Preloader Starts -->
@@ -54,7 +56,7 @@
                         <ul>
                             <li class="active"><a href="{% url 'index' %}">home</a></li>
                             <li><a href="{% url 'about' %}">about</a></li>
-                            <li><a href="#">Products</a>
+                            <li><a href="{% url 'products' %}">Products</a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Extra high Density</a></li>
                                     <li><a href="#">High Density</a></li>
@@ -65,16 +67,20 @@
                                     <li><a href="#">Cusions & Foam Sheets</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Catalog</a></li>
+                            <li><a href="{% url 'catalog' %}">Catalog</a></li>
                             <li><a href="{% url 'contact_us' %}">contacts</a></li>
-                          
-                            <li><a href="{% url 'admin:index' %}">Login</a></li>
+                            <li id="login"><a href="{% url 'admin:index' %}">Login</a></li>  
+                                <a href="{% url 'cart' %}">
+                                   <img  id="cart-icon" src="{% static 'assets/images/cart.png' %}">
+                               </a>
+                               <p id="cart-total">{{cartItems}}</p>
                         </ul>
                         <!--<form class="search_bar">
                             <input type="text" placeholder="Search">
                             <button type="submit" class="fas fa-search"></button>
                           </form> -->
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -140,7 +146,7 @@
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div class="info-text">
-                                    <p>Off Mumbwa road, Chinika industrial area </p>
+                                    <p>Plot 8076/A Chinika industrial area, Off Mumbwa road </p>
                                 </div>
                             </div>
                             <div class="d-flex">
@@ -207,7 +213,14 @@ Copyright &copy; 2022 <a>Foam Masters</a>
     <script src="{% static 'assets/js/vendor/jquery.datetimepicker.full.min.js' %}"></script>
     <script src="{% static 'assets/js/vendor/jquery.nice-select.min.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/cart.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I"></script>
     <script src="{% static 'assets/js/vendor/gmaps.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
 </body>
 </html>

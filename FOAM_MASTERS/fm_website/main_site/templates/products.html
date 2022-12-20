@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block banner %}
+{% endblock banner %}
+
+ <!-- Food Area starts -->
+ <section class="food-area section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="section-top">
+					<h3><span class="style-change">Foam Masters</span> <br>If you are looking for the best, you are in the right place</h3>
+					<p class="pt-3">Take a look at some of our best products.They are very affordable and they come in different shapes and sizes to suit your needs.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+
+		</div>
+	</div>
+</section>
+<!-- Food Area End -->
+
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{product.imageURL}}">
+			<div class="box-element product">
+				<h5><strong>{{product.name}}</strong></h5>
+				<hr>
+
+				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				
+				<a class="btn btn-outline-success" href="#">View</a>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}
