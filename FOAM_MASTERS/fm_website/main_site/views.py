@@ -12,7 +12,14 @@ def base(request):
     return render(request, 'base.html', {})
 
 def about(request):
-    return render(request, 'about.html', {})
+	data = cartData(request)
+	cartItems = data['cartItems']
+
+	order = data['order']
+	items = data['items']
+    
+	products = Product.objects.all()
+	return render(request, 'about.html', {'products':products, 'cartItems':cartItems,})
 
 def blog_details(request):
     return render(request, 'blog-details.html', {})
@@ -21,13 +28,25 @@ def blog_home(request):
     return render(request, 'blog-home.html', {})
 
 def contact_us(request):
-    return render(request, 'contact-us.html', {})
+	data = cartData(request)
+	cartItems = data['cartItems']
 
-def elements(request):
-    return render(request, 'elements.html', {})
+	order = data['order']
+	items = data['items']
+    
+	products = Product.objects.all()
+	return render(request, 'contact-us.html', {'products':products, 'cartItems':cartItems,})
+
 
 def index(request):
-    return render(request, 'index.html', {})
+	data = cartData(request)
+	cartItems = data['cartItems']
+
+	order = data['order']
+	items = data['items']
+    
+	products = Product.objects.all()
+	return render(request, 'index.html', {'products':products, 'cartItems':cartItems,})
 
 def menu(request):
     return render(request, 'menu.html', {})

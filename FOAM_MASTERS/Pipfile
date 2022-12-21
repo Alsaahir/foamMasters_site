@@ -9,6 +9,7 @@ pillow = "*"
 mysql = "*"
 mysqlclient = "*"
 python-decouple = "*"
+mysql-client = "*"
 
 [dev-packages]
 

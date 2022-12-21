@@ -12,8 +12,8 @@
     {% block title %}<title>FOAM MASTERS</title>{% endblock title %}
 
 
-      <!-- Favicon 
-      <link rel="shortcut icon" href="{% static 'assets/images/logo/favicon.png' %}" type="image/x-icon">-->
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="{% static 'assets/images/logo/web001.png' %}" type="image/x-icon">
 
       <!-- TOP BAR-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -26,7 +26,7 @@
       <link rel="stylesheet" href="{% static 'assets/css/jquery.datetimepicker.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/hero.css' %}">
-
+      <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
 
 </head>
   <body>
@@ -34,7 +34,7 @@
         <div class="preloader">
             <div class="spinner"></div>
         </div>
-    <!-- Preloader End 
+    <!-- Preloader End -->
 
     
     <!-- Header Area Starts -->
@@ -69,7 +69,7 @@
                             </li>
                             <li><a href="{% url 'catalog' %}">Catalog</a></li>
                             <li><a href="{% url 'contact_us' %}">contacts</a></li>
-                            <li id="login"><a href="{% url 'admin:index' %}">Login</a></li>  
+                                <li><a id="login-btn" href="{% url 'admin:index' %}">Login</a></li> 
                                 <a href="{% url 'cart' %}">
                                    <img  id="cart-icon" src="{% static 'assets/images/cart.png' %}">
                                </a>
