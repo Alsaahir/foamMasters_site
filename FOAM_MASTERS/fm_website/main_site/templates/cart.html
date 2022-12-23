@@ -1,11 +1,30 @@
-{% extends 'store/main.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% block banner %}
+{% endblock banner %}
+ <!-- Food Area starts -->
+ <section class="food-area section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="section-top">
+					<h3><span class="style-change">Foam Masters</span> <br/>If you are looking for the best, then you are in the right place.</h3><br/>
+                    <P>Feel free to order as many items as you need. You what they say, the more the merrier!</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+
+		</div>
+	</div>
+</section>
+<!-- Food Area End -->
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="box-element">
 
-				<a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Continue Shopping</a>
+				<a  class="btn btn-outline-dark" href="{% url 'products' %}">&#x2190; Continue Shopping</a>
 
 				<br>
 				<br>
@@ -13,7 +32,7 @@
 					<tr>
 						<th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
 						<th>
-							<a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+							<a  style="float:right; margin:5px;" class="btn btn-outline-primary" href="{% url 'checkout' %}">Checkout</a>
 						</th>
 					</tr>
 				</table>

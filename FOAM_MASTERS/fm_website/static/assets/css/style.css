@@ -46,7 +46,7 @@ body {
   position: absolute;
   width: 800px;
   margin-top: 60px;
-  display: flex;
+  display: none;
   justify-content: center;
   margin-left: 270px;
 }
@@ -124,10 +124,29 @@ body {
       
 /* Slide show CSS ends here */
 
+/* Create three equal columns that floats next to each other 
+.column {
+  float: left;
+  width: 33%;
+  height: 200px;
+}
+
+/* Clear floats after the columns 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other 
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+} */
 
 
-
-/* THREE PART SECTION */
+/* THREE PART SECTION 
 
 .div_right {
   background-color: #0099ff;
@@ -137,9 +156,6 @@ body {
   margin-right: 40px;
   position: relative;
   transform: translate(0, -50%);
-  border-left: 40px solid #24478f;
-  border-top: 75px solid transparent;
-  border-bottom: 75px solid transparent;
   justify-content: center;
   align-content: center;
   }
@@ -157,10 +173,6 @@ body {
   margin-left: 40px;
   position: relative;
   transform: translate(0, -50%);
-  
-  border-right: 40px solid #24478f;
-  border-top: 75px solid transparent;
-  border-bottom: 75px solid transparent;
   }
   
   .div_left img {
@@ -176,6 +188,14 @@ body {
   margin: 0 auto;
   position: relative;
   transform: translate(0, -50%);
+
+  border-right: 40px solid #0099ff;
+  border-top: 75px solid transparent;
+  border-bottom: 75px solid transparent;
+
+  border-left: 40px solid #0099ff;
+  border-top: 75px solid transparent;
+  border-bottom: 75px solid transparent;
   }
   .div_middle img {
     height: 455px;
@@ -183,7 +203,7 @@ body {
     padding-top: 120px;
   }
   
-  /* 3 PART SECTION  ENDS HERE*/
+   3 PART SECTION  ENDS HERE*/
   
 
 h1 {
@@ -194,10 +214,10 @@ h1 {
   font-style: italic;
 }
 h2 {
-  color: #fff;
+  color: #000;
   font-family: "Playfair Display", serif;
   font-size: 42px !important;
-  font-weight: 700;
+  
 }
 h3 {
   color: #131230;
@@ -206,10 +226,9 @@ h3 {
   font-weight: 700;
 }
 h4 {
-  color: #fff;
+  color: #000;
   font-family: "Roboto", sans-serif;
   font-size: 24px !important;
-  font-weight: 400;
   font-style: italic;
   text-transform: capitalize;
 }
@@ -325,7 +344,7 @@ textarea:focus {
   }
   /* THREE PART SECTION  FOR SMALLER SCREENS*/
 
-/* THREE PART SECTION CSS FOR SMALL SCREENS */
+/* THREE PART SECTION CSS FOR SMALL SCREENS 
 .div_left{
   border: none;
   width: 100%;
@@ -352,10 +371,10 @@ textarea:focus {
   margin: 0;
   transform: none;
   background-color: #0099ff;
-}
+} */
 
 }
-  /* 3 PART SECTION FOR SMALLER SCREENS ENDS HERE*/
+  /* 3 PART SECTION FOR SMALLER SCREENS ENDS HERE
 @media (min-width: 576px) and (max-width: 767.98px) {
   .main-menu ul {
     display: none;
@@ -370,7 +389,7 @@ textarea:focus {
     color: #fff;
     padding: 20px 20px 30px;
   }
-  /* THREE PART SECTION FOR SMALLEST SCREENS */
+  THREE PART SECTION FOR SMALLEST SCREENS 
 
 .div_right {
   background-color: #0099ff;
@@ -404,7 +423,6 @@ textarea:focus {
   }
   /* 3 PART SECTION FOR SMALLEST SCREENS ENDS HERE*/
   
-}
 @media (max-width: 575.98px) {
   .main-menu ul {
     display: none;
@@ -728,16 +746,12 @@ textarea:focus {
   }
 }
 
-.food-area p {
-  color: #000;
-  font-size: large;
-}
+/* FOOD AREA STARTS */
 .food-area {
   background-image: url("../images/corner.png");
   background-repeat: no-repeat;
   background-position: top right;
   position: relative;
-  height: 550px;
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .food-area {
@@ -753,7 +767,7 @@ textarea:focus {
   .food-area {
     background-image: none;
   }
-}
+}   
 .food-area .food-img {
   overflow: hidden;
 }
@@ -781,6 +795,10 @@ textarea:focus {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+.food-area p {
+  color: #000;
+  font-size: large;
+} 
 .food-area .food-content p {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -803,6 +821,95 @@ textarea:focus {
 .food-area .single-food:hover .food-content p {
   color: #131230;
 }
+
+/* FOOD AREA ENDS */
+
+/* ASURANCE AREA STARTS */
+.asurance-area {
+  background-image: url("../images/corner.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: relative;
+}
+.asurance-area .single-food {
+  transform: translate(0, -25%);
+  z-index: 4;
+  padding-bottom: 10px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .asurance-area {
+    background-image: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .asurance-area {
+    background-image: none;
+  }
+  .asurance-area .single-food {
+    transform: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .asurance-area {
+    background-image: none;
+  }
+}   
+.asurance-area .food-img {
+  overflow: hidden;
+}
+.asurance-area .food-img img {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.asurance-area .food-content {
+  padding: 30px;
+  background: #f9f9ff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.asurance-area .food-content .style-change {
+  color: #007bff;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.asurance-area p {
+  color: #000;
+  font-size: large;
+} 
+.asurance-area .food-content p {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.asurance-area .single-food:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+.asurance-area .single-food:hover .food-content {
+  background: #007bff;
+}
+.asurance-area .single-food:hover .food-content .style-change {
+  color: #131230;
+}
+.asurance-area .single-food:hover .food-content p {
+  color: #131230;
+}
+
+/* ASURANCE AREA ENDS */
+
 .reservation-area {
   background-image: url("../images/web_203.jpg");
   background-repeat: no-repeat;
@@ -3202,3 +3309,47 @@ h6 {
 }
 }
 /* STORE CSS ENDS */
+
+/* FAQs STARTS */
+.text-secondary {
+  color: #3d5d6f;
+}
+
+
+.fa,
+.fas {
+  font-family: 'FontAwesome';
+  font-weight: 400;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+a.text-secondary:focus,
+a.text-secondary:hover {
+  text-decoration: none;
+  color: #22343e;
+}
+
+#accordion .fa-plus {
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+#accordion a[aria-expanded=true] .fa-plus {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* FAQs ENDS */

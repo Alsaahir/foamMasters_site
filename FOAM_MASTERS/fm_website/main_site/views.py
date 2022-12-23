@@ -11,6 +11,16 @@ import os
 def base(request):
     return render(request, 'base.html', {})
 
+def index(request):
+	data = cartData(request)
+	cartItems = data['cartItems']
+
+	order = data['order']
+	items = data['items']
+    
+	products = Product.objects.all()
+	return render(request, 'index.html', {'products':products, 'cartItems':cartItems,})
+
 def about(request):
 	data = cartData(request)
 	cartItems = data['cartItems']
@@ -21,11 +31,29 @@ def about(request):
 	products = Product.objects.all()
 	return render(request, 'about.html', {'products':products, 'cartItems':cartItems,})
 
-def blog_details(request):
-    return render(request, 'blog-details.html', {})
+def products(request):
+    page = "products"
+    data = cartData(request)
+    
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+    
+    products = Product.objects.all()
+    context = {'products':products, 'cartItems':cartItems, 'page' : page}
+    return render(request, 'products.html', context)
 
-def blog_home(request):
-    return render(request, 'blog-home.html', {})
+def extra_high_density(request):
+    page = "products"
+    data = cartData(request)
+    
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+    
+    products = Product.objects.all()
+    context = {'products':products, 'cartItems':cartItems, 'page' : page}
+    return render(request, 'extra_high_density.html', context)
 
 def contact_us(request):
 	data = cartData(request)
@@ -37,31 +65,18 @@ def contact_us(request):
 	products = Product.objects.all()
 	return render(request, 'contact-us.html', {'products':products, 'cartItems':cartItems,})
 
+def blog_details(request):
+    return render(request, 'blog-details.html', {})
 
-def index(request):
-	data = cartData(request)
-	cartItems = data['cartItems']
+def blog_home(request):
+    return render(request, 'blog-home.html', {})
 
-	order = data['order']
-	items = data['items']
-    
-	products = Product.objects.all()
-	return render(request, 'index.html', {'products':products, 'cartItems':cartItems,})
+
+
 
 def menu(request):
     return render(request, 'menu.html', {})
 
-def products(request):
-    page = "store"
-    data = cartData(request)
-    
-    cartItems = data['cartItems']
-    order = data['order']
-    items = data['items']
-    
-    products = Product.objects.all()
-    context = {'products':products, 'cartItems':cartItems, 'page' : page}
-    return render(request, 'products.html', context)
 
 
 def store(request):
@@ -85,7 +100,7 @@ def cart(request):
 	items = data['items']
 
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
-	return render(request, 'store/cart.html', context)
+	return render(request, 'cart.html', context)
 
 def checkout(request):
 	data = cartData(request)

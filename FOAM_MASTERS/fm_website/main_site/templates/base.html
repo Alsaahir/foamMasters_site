@@ -25,7 +25,6 @@
       <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/jquery.datetimepicker.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-      <link rel="stylesheet" href="{% static 'assets/css/hero.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
 
 </head>
@@ -58,7 +57,7 @@
                             <li><a href="{% url 'about' %}">about</a></li>
                             <li><a href="{% url 'products' %}">Products</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Extra high Density</a></li>
+                                    <li><a href="{% url 'extra_high_density' %}">Extra high Density</a></li>
                                     <li><a href="#">High Density</a></li>
                                     <li><a href="#">Medium Density</a></li>
                                     <li><a href="#">High Quality</a></li>
@@ -216,11 +215,16 @@ Copyright &copy; 2022 <a>Foam Masters</a>
     <script src="{% static 'assets/js/cart.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I"></script>
     <script src="{% static 'assets/js/vendor/gmaps.min.js' %}"></script>
+
+    <!-- CART -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
+    <!-- FAQs -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
 </body>
 </html>
