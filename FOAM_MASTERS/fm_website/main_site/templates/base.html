@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,28 +59,25 @@
                             <li><a href="{% url 'products' %}">Products</a>
                                 <ul class="sub-menu">
                                     <li><a href="{% url 'extra_high_density' %}">Extra high Density</a></li>
-                                    <li><a href="#">High Density</a></li>
-                                    <li><a href="#">Medium Density</a></li>
-                                    <li><a href="#">High Quality</a></li>
-                                    <li><a href="#">Normal Quality</a></li>
-                                    <li><a href="#">Furniture</a></li>
-                                    <li><a href="#">Cusions & Foam Sheets</a></li>
+                                    <li><a href="{% url 'high_density' %}">High Density</a></li>
+                                    <li><a href="{% url 'medium_density' %}">Medium Density</a></li>
+                                    <li><a href="{% url 'high_quality' %}">High Quality</a></li>
+                                    <li><a href="{% url 'normal_quality' %}">Normal Quality</a></li>
+                                    <li><a href="{% url 'furniture' %}">Furniture</a></li>
+                                    <li><a href="{% url 'cusions_and_foams' %}">Cusions & Foam Sheets</a></li>
                                 </ul>
                             </li>
                             <li><a href="{% url 'catalog' %}">Catalog</a></li>
                             <li><a href="{% url 'contact_us' %}">contacts</a></li>
-                                <li><a id="login-btn" href="{% url 'admin:index' %}">Login</a></li> 
-                                <a href="{% url 'cart' %}">
-                                   <img  id="cart-icon" src="{% static 'assets/images/cart.png' %}">
-                               </a>
-                               <p id="cart-total">{{cartItems}}</p>
+                            {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'mail' %}">Mail</a></li>
+                            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                            <li><a id="login-btn" href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                            <li><a id="login-btn" href="{% url 'login' %}">Login</a></li> 
+                            {% endif %}
                         </ul>
-                        <!--<form class="search_bar">
-                            <input type="text" placeholder="Search">
-                            <button type="submit" class="fas fa-search"></button>
-                          </form> -->
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -103,27 +101,55 @@
    
    {% endblock content %}
 
+   {% block newsletter %}
    <!--SUBSCRIBE TO MAIL LIST -->
-   <section class="subscribe_to_mail">
+   <section class="subscription_form section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Subscribe to newsletter</h4>
+                        <hr>
+
+                        <form action="#" method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <input class="btn btn-primary btn-block" type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+   </section>
+   {% endblock newsletter %}
+   <!-- <section class="subscribe_to_mail">
     <div>
-    <!-- subscribtion foam Starts -->
+    subscribtion foam Starts
     <section class="subscription-form section-padding3">
         <div class="container">
-                    <form action="#">
+                    <form action="#" method="POST">
+                        {% csrf_token %}
                         <div class="left">
                             <h5>BULK/CUSTOM ORDERS? CALL OUR TEAM TODAY</h5>
                             <p>SALES TEAM AT (+260) 211-286 776 OR EMAIL US ON sales@foamMasters.com.zm</p>
                         </div>
                         <div class="right">
-                            <input type="email" placeholder="subscribe to our mail list" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required>
+                            {{ form }}
                             <button type="submit" class="template-btn">subscribe</button>
                         </div>
                     </form>
         </div>
-    </section>
-    <!-- subscribtion foam Ends -->
+    </section> -->
+    <!-- subscribtion foam Ends 
     </div>
-   </section>
+   </section> -->
    <!--SUBSCRIBE TO MAIL LIST ENDS HERE-->
 
     <!-- Footer Area Starts -->

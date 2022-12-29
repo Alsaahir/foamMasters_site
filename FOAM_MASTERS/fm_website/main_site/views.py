@@ -1,172 +1,225 @@
-from django.shortcuts import render
-from django.http import JsonResponse
-import json
+from django.shortcuts import render, redirect
 import datetime
 from .models import * 
-from .utils import cookieCart, cartData, guestOrder
-from django.http import FileResponse
 import os
+from .forms import SubscribersForm, MessageForm, UserLoginForm
+from django.contrib import messages
+from django.core.mail import send_mail
+from django_pandas.io import read_frame
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import (
+		logout,
+		authenticate,
+		login,
+		get_user_model
+		)
 
 
 def base(request):
-    return render(request, 'base.html', {})
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
+	context = {'form': form,}
+	return render(request, 'base.html', context)
 
 def index(request):
-	data = cartData(request)
-	cartItems = data['cartItems']
-
-	order = data['order']
-	items = data['items']
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
     
-	products = Product.objects.all()
-	return render(request, 'index.html', {'products':products, 'cartItems':cartItems,})
+	return render(request, 'index.html', {'form': form,})
 
 def about(request):
-	data = cartData(request)
-	cartItems = data['cartItems']
-
-	order = data['order']
-	items = data['items']
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
     
-	products = Product.objects.all()
-	return render(request, 'about.html', {'products':products, 'cartItems':cartItems,})
+	return render(request, 'about.html', {'form': form,})
 
 def products(request):
-    page = "products"
-    data = cartData(request)
-    
-    cartItems = data['cartItems']
-    order = data['order']
-    items = data['items']
-    
-    products = Product.objects.all()
-    context = {'products':products, 'cartItems':cartItems, 'page' : page}
-    return render(request, 'products.html', context)
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
+
+	page = "products"
+	context = {'page' : page, 'form': form,}
+	return render(request, 'products.html', context)
 
 def extra_high_density(request):
-    page = "products"
-    data = cartData(request)
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
     
-    cartItems = data['cartItems']
-    order = data['order']
-    items = data['items']
+	context = {'form': form,}
+	return render(request, 'extra_high_density.html', context)
+
+def high_density(request):
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
     
-    products = Product.objects.all()
-    context = {'products':products, 'cartItems':cartItems, 'page' : page}
-    return render(request, 'extra_high_density.html', context)
+	context = {'form': form,}
+	return render(request, 'high_density.html', context)
+
+
+def medium_density(request):
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
+    
+	context = {'form': form,}
+	return render(request, 'medium_density.html', context)
+
+
+def high_quality(request):
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
+    
+	context = {'form': form,}
+	return render(request, 'high_quality.html', context)
+
+
+def normal_quality(request):
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
+    
+	context = {'form': form,}
+	return render(request, 'normal_quality.html', context)
+
+
+def furniture(request):
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
+    
+	context = {'form': form,}
+	return render(request, 'furniture.html', context)
+
+
+def cusions_and_foams(request):
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
+    
+	context = {'form': form,}
+	return render(request, 'cusions_and_foams.html', context)
 
 def contact_us(request):
-	data = cartData(request)
-	cartItems = data['cartItems']
-
-	order = data['order']
-	items = data['items']
+	if request.method == "POST":
+		form = SubscribersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Subscription Successful!')
+			return redirect('/')
+	else:
+		form = SubscribersForm()
     
 	products = Product.objects.all()
-	return render(request, 'contact-us.html', {'products':products, 'cartItems':cartItems,})
-
-def blog_details(request):
-    return render(request, 'blog-details.html', {})
-
-def blog_home(request):
-    return render(request, 'blog-home.html', {})
-
-
-
-
-def menu(request):
-    return render(request, 'menu.html', {})
-
-
-
-def store(request):
-	page = "store"
-	data = cartData(request)
-
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
-
-	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems, 'page' : page}
-	return render(request, 'store/store.html', context)
-
-
-def cart(request):
-	data = cartData(request)
-
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
-
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
-	return render(request, 'cart.html', context)
-
-def checkout(request):
-	data = cartData(request)
-	
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
-
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
-	return render(request, 'store/checkout.html', context)
-
-def updateItem(request):
-	data = json.loads(request.body)
-	productId = data['productId']
-	action = data['action']
-	print('Action:', action)
-	print('Product:', productId)
-
-	customer = request.user.customer
-	product = Product.objects.get(id=productId)
-	order, created = Order.objects.get_or_create(customer=customer, complete=False)
-
-	orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
-
-	if action == 'add':
-		orderItem.quantity = (orderItem.quantity + 1)
-	elif action == 'remove':
-		orderItem.quantity = (orderItem.quantity - 1)
-
-	orderItem.save()
-
-	if orderItem.quantity <= 0:
-		orderItem.delete()
-
-	return JsonResponse('Item was added', safe=False)
-
-def processOrder(request):
-	transaction_id = datetime.datetime.now().timestamp()
-	data = json.loads(request.body)
-
-	if request.user.is_authenticated:
-		customer = request.user.customer
-		order, created = Order.objects.get_or_create(customer=customer, complete=False)
-	else:
-		customer, order = guestOrder(request, data)
-
-	total = float(data['form']['total'])
-	order.transaction_id = transaction_id
-
-	if total == order.get_cart_total:
-		order.complete = True
-	order.save()
-
-	if order.shipping == True:
-		ShippingAddress.objects.create(
-		customer=customer,
-		order=order,
-		address=data['shipping']['address'],
-		city=data['shipping']['city'],
-		state=data['shipping']['state'],
-		zipcode=data['shipping']['zipcode'],
-		)
-
-	return JsonResponse('Payment submitted..', safe=False)
+	return render(request, 'contact-us.html', {'products':products, 'form': form,})
 
 
 def catalog(request):
     filepath = os.path.join('static', 'assets/pdfs/combinepdf.pdf')
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
+
+
+@login_required
+def mail(request):
+	emails = Subscriber.objects.all()
+	data_frame = read_frame(emails, fieldnames=['email'])
+	email_list = data_frame['email'].values.tolist()
+	if request.method == "POST":
+		form = MessageForm(request.POST)
+		if form.is_valid():
+			form.save()
+			subject = form.cleaned_data.get('subject')
+			message = form.cleaned_data.get('body')
+			send_mail(
+				subject,
+				message,
+				'',
+				email_list,
+				fail_silently=False,
+			)
+			messages.success(request, 'Message has been sent to the mail list Successfully!')
+			return redirect('mail')
+	else:
+		form = MessageForm()
+	context = {'form': form,}
+	return render(request, 'mail.html', context)
+
+def login_view(request):
+	next = request.GET.get('next')
+	form = UserLoginForm(request.POST or None)
+	if form.is_valid():
+		username = form.cleaned_data.get('username')
+		password = form.cleaned_data.get('password')
+		user = authenticate(username=username, password=password)
+		login(request, user)
+		if next:
+			return redirect('next')
+		return redirect('/')
+	return render(request, 'login.html', {'form': form})
+
+
+
+def logout_view(request):
+	logout(request)
+	return redirect('/')

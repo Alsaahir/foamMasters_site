@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+    <title>Login</title>
+{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% block banner %}
+{% endblock banner %}
+<!-- LOGIN FORM -->
+<section class="subscription_form section-padding">
+ <div class="container">
+     <div class="row">
+        {% if not request.user.is_authenticated %}
+         <div class="col-md-4 offset-md-4">
+             {% for message in messages %}
+                 <div class="alert alert-success">
+                     {{ message }}
+                 </div>
+             {% endfor %}
+             <div class="card">
+                 <div class="card-body">
+                     <h4>Enter Credentials</h4>
+                     <hr>
+
+                     <form action="#" method="POST">
+                         {% csrf_token %}
+                         {{ form|crispy }}
+                         <input class="btn btn-primary btn-block" type="submit" value="Login">
+
+                     </form>
+                     <br/>
+                     <P><a href="{% url 'password_reset' %}">Forgotten your password?</a></p>
+                 </div>
+                 {% else %}
+                 <P>You are already logged in. Would you like to <a href="{% url 'logout' %}">logout?</a></p>
+             </div>
+         </div>
+         {% endif %} 
+     </div> 
+ </div>
+</section>
+{% block newsletter %}
+{% endblock newsletter %}
+{% endblock content %}

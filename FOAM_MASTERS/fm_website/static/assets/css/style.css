@@ -207,7 +207,7 @@ body {
   
 
 h1 {
-  color: #fff;
+  color: #000;
   font-family: "Playfair Display", serif;
   font-size: 60px !important;
   font-weight: 700;
@@ -909,6 +909,71 @@ textarea:focus {
 }
 
 /* ASURANCE AREA ENDS */
+
+/* ADMIN AREA BEGINS */
+
+.admin-area {
+  background-image: url("../images/corner.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: relative;
+  height: 300px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .admin-area {
+    background-image: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .admin-area {
+    background-image: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .admin-area {
+    background-image: none;
+  }
+}   
+.admin-area .food-img {
+  overflow: hidden;
+}
+.admin-area .food-img img {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.admin-area .food-content {
+  padding: 30px;
+  background: #f9f9ff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.admin-area .food-content .style-change {
+  color: #007bff;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.admin-area p {
+  color: #000;
+  font-size: large;
+} 
+.admin-area .food-content p {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+
+/* ADMIN AREA ENDS */
 
 .reservation-area {
   background-image: url("../images/web_203.jpg");
@@ -1815,6 +1880,9 @@ textarea:focus {
     float: left;
   }
 }
+.subscription_form {
+  color: #000;
+} 
 
 /* Subscription form css */
 .subscription-form {

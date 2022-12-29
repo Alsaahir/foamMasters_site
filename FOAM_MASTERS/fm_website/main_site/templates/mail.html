@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} <title>Newsletter</title>{% endblock title %}
+{% block content %}
+{% block banner %}
+{% endblock banner %}
+ <!-- Food Area starts -->
+ <section class="admin-area section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="section-top">
+					<h3><span class="style-change">Foam Masters Admin</span></h3>
+					<p class="pt-3">Send a letter to all the subscribers to update them on the latest products or services.</p>
+				</div>
+			</div>
+		</div>
+        <div class="row">
+
+        </div>
+    </div>
+</section>
+<!-- Food Area ends -->
+
+   <!--SUBSCRIBE TO MAIL LIST -->
+   <section class="subscription_form section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                <div class="card">
+                    <div class="card-body">
+                        <h4>What is the message</h4>
+                        <hr>
+
+                        <form action="#" method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <input class="btn btn-primary" type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+   </section>
+
+{% block newsletter %}
+{% endblock newsletter %}
+{% endblock content %}
