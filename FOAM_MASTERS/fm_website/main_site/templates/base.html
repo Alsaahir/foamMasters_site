@@ -103,54 +103,37 @@
 
    {% block newsletter %}
    <!--SUBSCRIBE TO MAIL LIST -->
-   <section class="subscription_form section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 offset-md-4">
-                {% for message in messages %}
-                    <div class="alert alert-success">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Subscribe to newsletter</h4>
-                        <hr>
-
-                        <form action="#" method="POST">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                            <input class="btn btn-primary btn-block" type="submit" value="Subscribe">
-                        </form>
+    <section class="news-area section-padding" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="single-food">
+                        <div class="blank">
+                            <h5>GET UPDATES ON OUR LATEST PRODUCTS AND SERVICES.</h5>
+                            <p>Be the first one to know whats in our stock.</p>
+                            <p>Contact our sales team as(+260) 211-286 776 or email us on sales@foamMasters.com.zm</p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-food mt-5 mt-sm-0">
+                            <h4>Subscribe to our newsletter</h4>
+                            <hr>
+
+                            <form action="." method="POST">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <input class="btn btn-primary btn-block" type="submit" value="Subscribe">
+                            </form>
+
+                    </div>
+                </div>
+                
             </div>
-        </div>  
-    </div>
-   </section>
-   {% endblock newsletter %}
-   <!-- <section class="subscribe_to_mail">
-    <div>
-    subscribtion foam Starts
-    <section class="subscription-form section-padding3">
-        <div class="container">
-                    <form action="#" method="POST">
-                        {% csrf_token %}
-                        <div class="left">
-                            <h5>BULK/CUSTOM ORDERS? CALL OUR TEAM TODAY</h5>
-                            <p>SALES TEAM AT (+260) 211-286 776 OR EMAIL US ON sales@foamMasters.com.zm</p>
-                        </div>
-                        <div class="right">
-                            {{ form }}
-                            <button type="submit" class="template-btn">subscribe</button>
-                        </div>
-                    </form>
         </div>
-    </section> -->
-    <!-- subscribtion foam Ends 
-    </div>
-   </section> -->
-   <!--SUBSCRIBE TO MAIL LIST ENDS HERE-->
+    </section>
+   {% endblock newsletter %}
+
 
     <!-- Footer Area Starts -->
     <footer class="footer-area">

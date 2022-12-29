@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 import datetime
 from .models import * 
 import os
-from .forms import SubscribersForm, MessageForm, UserLoginForm
+from .forms import SubscribersForm, MessageForm, UserLoginForm, ContactForm
 from django.contrib import messages
 from django.core.mail import send_mail
 from django_pandas.io import read_frame
@@ -171,8 +171,20 @@ def contact_us(request):
 	else:
 		form = SubscribersForm()
     
-	products = Product.objects.all()
-	return render(request, 'contact-us.html', {'products':products, 'form': form,})
+	if request.method == "GET":
+		contact_form = ContactForm()
+	else:
+		contact_form = ContactForm(request.POST)
+		if contact_form.is_valid():
+			from_email = contact_form.cleaned_data['email']
+			subject = contact_form.cleaned_data['subject']
+			message = contact_form.cleaned_data['message']
+			send_mail(subject, message, from_email, ['jacobdjango7@gmail.com', from_email])
+	context = {'products':products,
+				'form': form,
+				'contact_form': contact_form,
+				}
+	return render(request, 'contact-us.html', context)
 
 
 def catalog(request):

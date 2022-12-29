@@ -28,5 +28,10 @@ class UserLoginForm(forms.Form):
                 raise forms.validationError("The password was incorrect")
                 if not user.is_active:
                     raise forms.validationError("The user is no longer active")
-        
             return super(UserLoginForm, self).clean(*args, **kwargs)
+
+class ContactForm(forms.Form):
+    name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+    subject = forms.CharField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)

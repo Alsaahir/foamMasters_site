@@ -5,7 +5,7 @@
 {% block banner %}
 {% endblock banner %}
  <!-- Food Area starts -->
- <section class="food-area section-padding">
+ <section class="contact-area section-padding">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
@@ -23,7 +23,7 @@
 <!-- Food Area End -->
 
     <!-- Map Area Starts -->
-    <section class="map-area section-padding">
+    <section class="map-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -38,8 +38,9 @@
 
 
     <!-- Contact Form Starts -->
-    <section class="contact-form section-padding3">
+    <section class="contact-form section-padding">
         <div class="container">
+            <h3>Write us an email</h3><hr/>
             <div class="row">
                 <div class="col-lg-3 mb-5 mb-lg-0">
                     <div class="d-flex">
@@ -48,7 +49,7 @@
                         </div>
                         <div class="info-text">
                             <h5>Plot 8076/A Chinika industrial area</h5>
-                            <p>Off Mumbwa road</p>
+                            <p style="color: #000;">Off Mumbwa road</p>
                         </div>
                     </div>
                     <div class="d-flex">
@@ -57,7 +58,8 @@
                         </div>
                         <div class="info-text">
                             <h5>+26077 1940 452</h5>
-                            <p>Mon - Sat</p>
+                            <p style="color: #000;">Mon - Sat</p>
+                            <br/>
                         </div>
                     </div>
                     <div class="d-flex">
@@ -66,21 +68,26 @@
                         </div>
                         <div class="info-text">
                             <h5>foammaster@gmail.com</h5>
-                            <p>Send us your query anytime!</p>
+                            <p style="color: #000;">Send us your query anytime!</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <form action="#">
+                    <form action="." method="POST">
+                        {% csrf_token %}
                         <div class="left">
-                            <input type="text" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" required>
-                            <input type="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required>
-                            <input type="text" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" required>
+                            {{ contact_form.name.label }}
+                            {{ contact_form.name }}
+                            {{ contact_form.email.label }}
+                            {{ contact_form.email }}
+                            {{ contact_form.subject.label }}
+                            {{ contact_form.subject }}
                         </div>
                         <div class="right">
-                            <textarea name="message" cols="20" rows="7"  placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" required></textarea>
+                            {{ contact_form.message.lable }}
+                            {{ contact_form.message }}
                         </div>
-                        <button type="submit" class="template-btn">Send Email</button>
+                        <input class="btn btn-primary" type="submit" value="Send">
                     </form>
                 </div>
             </div>
