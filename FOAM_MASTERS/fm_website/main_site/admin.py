@@ -4,4 +4,5 @@ from .models import *
 admin.site.site_header = 'Foam Masters administration'
 
 admin.site.register(Subscriber)
-admin.site.register(MailMassage)
+admin.site.register(SentMail)
+admin.site.register(RecievedMail)

@@ -68,7 +68,7 @@
                                 </ul>
                             </li>
                             <li><a href="{% url 'catalog' %}">Catalog</a></li>
-                            <li><a href="{% url 'contact_us' %}">contacts</a></li>
+                            <li><a href="{% url 'contact_us' %}">contact</a></li>
                             {% if request.user.is_authenticated %}
                             <li><a href="{% url 'mail' %}">Mail</a></li>
                             <li><a href="{% url 'admin:index' %}">Admin</a></li>
@@ -117,6 +117,11 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="single-food mt-5 mt-sm-0">
+                        {% for message in messages %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
                             <h4>Subscribe to our newsletter</h4>
                             <hr>
 

@@ -2275,7 +2275,6 @@ textarea:focus {
 }
 .map-area {
     padding-top: 40px;
-    padding-bottom: 40px;
 }
 
 .info-text h5 {
@@ -2318,7 +2317,6 @@ textarea:focus {
     width: 48%;
     overflow: hidden;
     color: #000;
-    padding-top: 20px;
 }
 
 @media (max-width: 575.98px) {

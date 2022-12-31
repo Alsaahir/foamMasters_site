@@ -6,6 +6,7 @@ from .forms import SubscribersForm, MessageForm, UserLoginForm, ContactForm
 from django.contrib import messages
 from django.core.mail import send_mail
 from django_pandas.io import read_frame
+from django.http import FileResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import (
 		logout,
@@ -163,27 +164,33 @@ def cusions_and_foams(request):
 
 def contact_us(request):
 	if request.method == "POST":
+		contact_form = ContactForm(request.POST)
+		if contact_form.is_valid():
+			contact_form.save()
+			name = contact_form.cleaned_data.get('name')
+			from_email = contact_form.cleaned_data.get('email', '')
+			subject = contact_form.cleaned_data.get('subject')
+			message = contact_form.cleaned_data.get('message')
+			mail_msg = str(message) + " " + str(from_email)
+			send_mail(
+				subject,
+				mail_msg,
+				from_email,
+				['jacobdjango7@gmail.com'],
+				fail_silently=False,
+			)
+			messages.success(request, 'Message has been sent Successfully!')
+			return redirect('contact_us')
 		form = SubscribersForm(request.POST)
 		if form.is_valid():
 			form.save()
 			messages.success(request, 'Subscription Successful!')
 			return redirect('/')
+
 	else:
 		form = SubscribersForm()
-    
-	if request.method == "GET":
 		contact_form = ContactForm()
-	else:
-		contact_form = ContactForm(request.POST)
-		if contact_form.is_valid():
-			from_email = contact_form.cleaned_data['email']
-			subject = contact_form.cleaned_data['subject']
-			message = contact_form.cleaned_data['message']
-			send_mail(subject, message, from_email, ['jacobdjango7@gmail.com', from_email])
-	context = {'products':products,
-				'form': form,
-				'contact_form': contact_form,
-				}
+	context = {'form': form, 'contact_form': contact_form,}
 	return render(request, 'contact-us.html', context)
 
 

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Subscriber, MailMassage
+from .models import Subscriber, SentMail, RecievedMail
 from django.contrib.auth import authenticate
 
 class SubscribersForm(forms.ModelForm):
@@ -9,7 +9,7 @@ class SubscribersForm(forms.ModelForm):
     
 class MessageForm(forms.ModelForm):
     class Meta:
-        model = MailMassage
+        model = SentMail
         fields = '__all__'
 
 class UserLoginForm(forms.Form):
@@ -30,8 +30,7 @@ class UserLoginForm(forms.Form):
                     raise forms.validationError("The user is no longer active")
             return super(UserLoginForm, self).clean(*args, **kwargs)
 
-class ContactForm(forms.Form):
-    name = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = RecievedMail
+        fields = '__all__'

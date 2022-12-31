@@ -40,7 +40,7 @@
     <!-- Contact Form Starts -->
     <section class="contact-form section-padding">
         <div class="container">
-            <h3>Write us an email</h3><hr/>
+            <h3 style="color: #007bff;">Write us an email</h3><hr/>
             <div class="row">
                 <div class="col-lg-3 mb-5 mb-lg-0">
                     <div class="d-flex">
@@ -48,7 +48,7 @@
                             <i class="fa fa-home"></i>
                         </div>
                         <div class="info-text">
-                            <h5>Plot 8076/A Chinika industrial area</h5>
+                            <h5 style="font-family: Arial">Plot 8076/A Chinika industrial area</h5>
                             <p style="color: #000;">Off Mumbwa road</p>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="info-text">
-                            <h5>+26077 1940 452</h5>
+                            <h5 style="font-family: Arial">+26077 1940 452</h5>
                             <p style="color: #000;">Mon - Sat</p>
                             <br/>
                         </div>
@@ -67,13 +67,18 @@
                             <i class="fa fa-envelope-o"></i>
                         </div>
                         <div class="info-text">
-                            <h5>foammaster@gmail.com</h5>
+                            <h5 style="font-family: Arial">foammasters@gmail.com</h5>
                             <p style="color: #000;">Send us your query anytime!</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <form action="." method="POST">
+                    {% for message in messages %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    <form action="#" method="POST">
                         {% csrf_token %}
                         <div class="left">
                             {{ contact_form.name.label }}
@@ -84,7 +89,7 @@
                             {{ contact_form.subject }}
                         </div>
                         <div class="right">
-                            {{ contact_form.message.lable }}
+                            {{ contact_form.message.label }}
                             {{ contact_form.message }}
                         </div>
                         <input class="btn btn-primary" type="submit" value="Send">
