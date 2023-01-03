@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!-- Page Title -->
 {% block title %}<title>FOAM MASTERS</title>{% endblock title %}
@@ -24,9 +25,10 @@
         <section class="banner-area text-center">
           <div class="container">
               <div class="row">
-                  <div class="col-lg-12">
-                      <h6>Welcome to foam masters</h6>
-                  </div>
+                <div class="col-lg-12">
+                    <h1>Welcome to Foam<span class="prime-color"> Masters</span></h1><br>  
+                    <h3>Manufacturers and Suppliers of the Best Quality Furniture</h3>
+                </div>
               </div>
           </div>
       </section>
@@ -68,7 +70,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="single-food">
                     <div class="food-img">
-                        <img src="{% static 'assets/images/food1.jpg' %}" class="img-fluid" alt="">
+                        <img src="{% static 'assets/images/01.jpg' %}" class="img-fluid" alt="">
                     </div>
                     <div class="food-content">
                         <div class="d-flex justify-content-between">
@@ -82,7 +84,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="single-food mt-5 mt-sm-0">
                     <div class="food-img">
-                        <img src="{% static 'assets/images/food2.jpg' %}" class="img-fluid" alt="">
+                        <img src="{% static 'assets/images/02.jpg' %}" class="img-fluid" alt="">
                     </div>
                     <div class="food-content">
                         <div class="d-flex justify-content-between">
@@ -96,7 +98,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="single-food mt-5 mt-md-0">
                     <div class="food-img">
-                        <img src="{% static 'assets/images/food3.jpg' %}" class="img-fluid" alt="">
+                        <img src="{% static 'assets/images/03.jpg' %}" class="img-fluid" alt="">
                     </div>
                     <div class="food-content">
                         <div class="d-flex justify-content-between">
@@ -112,16 +114,57 @@
     </div>
 </section>
 
-        <!-- Reservation Area Starts -->
-        <div class="reservation-area section-padding text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                    </div>
+    <!-- Reservation Area Starts -->
+    <div class="reservation-area section-padding text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Proudly Zambian</h1>
+                    <h3 class="mt-4">If you want the best think Foam Masters.</h3>
+                    {% comment %} <a href="{% url 'about' %}" class="btn btn-primary">Learn More</a> {% endcomment %}
                 </div>
             </div>
         </div>
-         <!-- Reservation Area End -->
+    </div>
+    <!-- Reservation Area End -->
+
+         {% block newsletters %}
+         <!--SUBSCRIBE TO MAIL LIST -->
+          <section class="news-area section-padding" >
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-6 col-sm-6">
+                          <div class="single-food">
+                              <div class="blank">
+                                  <h5>GET UPDATES ON OUR LATEST PRODUCTS AND SERVICES.</h5>
+                                  <p>Be the first one to know whats in our stock.</p>
+                                  <p>Contact our sales team at (+260) 211-286 776 or email us on sales@foamMasters.com.zm</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6">
+                          <div class="single-food mt-5 mt-sm-0">
+                              {% for message in messages %}
+                              <div class="alert alert-success">
+                                  {{ message }}
+                              </div>
+                              {% endfor %}
+                                  <h4>Subscribe to our newsletter</h4>
+                                  <hr>
+      
+                                  <form action="." method="POST">
+                                      {% csrf_token %}
+                                      {{ form|crispy }}
+                                      <input class="btn btn-primary btn-block" type="submit" value="Subscribe">
+                                  </form>
+      
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+          </section>
+         {% endblock newsletters %}
          
 
 
@@ -141,7 +184,7 @@
                 <div class="testimonial-slider owl-carousel">
                     <div class="single-slide d-sm-flex">
                         <div class="customer-img mr-4 mb-4 mb-sm-0">
-                            <img src="{% static 'assets/images/anonymous1.jpg' %}" alt="">
+                            <img src="{% static 'assets/images/anonymous4.jpg' %}" alt="">
                         </div>
                         <div class="customer-text">
                             <h5>Anonymous</h5>
@@ -176,7 +219,7 @@
 </section>
 <!-- Testimonial Area End -->
 
-
-       
+    {% block newsletter %}
+    {% endblock newsletter %}
     
      {% endblock content %}

@@ -124,93 +124,14 @@ body {
 /* Slide show CSS ends here */
 
 
-/* Create three equal columns that floats next to each other 
-.column {
-  float: left;
-  width: 33%;
-  height: 200px;
-}
-
-/* Clear floats after the columns 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other 
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-} */
-
-
-/* THREE PART SECTION 
-
-.div_right {
-  background-color: #0099ff;
-  height: 150px;
-  float: right;
-  width: 30.40%;
-  margin-right: 40px;
-  position: relative;
-  transform: translate(0, -50%);
-  justify-content: center;
-  align-content: center;
-  }
-  .div_right img {
-    height: 350px;
-    transform: translate(0, -50%);
-    padding-bottom: 45px;
-  }
-  
-  .div_left {
-  background-color: #0099ff;
-  height: 150px;
-  float: left;
-  width: 30.40%;
-  margin-left: 40px;
-  position: relative;
-  transform: translate(0, -50%);
-  }
-  
-  .div_left img {
-    height: 350px;
-    transform: translate(0, -50%);
-    padding-bottom: 30px;
-  }
-  
-  .div_middle {
-  background-color: #24478f;
-  height: 150px;
-  width: 33.33%;
-  margin: 0 auto;
-  position: relative;
-  transform: translate(0, -50%);
-
-  border-right: 40px solid #0099ff;
-  border-top: 75px solid transparent;
-  border-bottom: 75px solid transparent;
-
-  border-left: 40px solid #0099ff;
-  border-top: 75px solid transparent;
-  border-bottom: 75px solid transparent;
-  }
-  .div_middle img {
-    height: 455px;
-    transform: translate(0, -50%);
-    padding-top: 120px;
-  }
-  
-   3 PART SECTION  ENDS HERE*/
 
 h1 {
-    color: #000;
-    font-family: "Playfair Display", serif;
+    color: #fff;
+    font-family: montserrat;
     font-size: 60px !important;
-    font-weight: 700;
-    font-style: italic;
+    font-weight: bolder;
+
+
 }
 
 h2 {
@@ -220,10 +141,10 @@ h2 {
 }
 
 h3 {
-    color: #131230;
-    font-family: "Playfair Display", serif;
-    font-size: 36px !important;
-    font-weight: 700;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px !important;
+    font-weight: 500;
 }
 
 h4 {
@@ -355,86 +276,9 @@ textarea:focus {
         width: 100%;
         padding: 20px 20px 30px;
     }
-    /* THREE PART SECTION  FOR SMALLER SCREENS*/
-    /* THREE PART SECTION CSS FOR SMALL SCREENS 
-.div_left{
-  border: none;
-  width: 100%;
-  float: none;
-  overflow: hidden;
-  margin: 0;
-  transform: none;
-  order: 1;
-  background-color: #24478f;
-}
-.div_right{
-  border: none;
-  width: 100%;
-  float: none;
-  overflow: hidden;
-  margin: 0;
-  transform: none;
-  order: 3;
-}
-.div_middle{
-  border: none;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  transform: none;
-  background-color: #0099ff;
-} */
 }
 
 
-/* 3 PART SECTION FOR SMALLER SCREENS ENDS HERE
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .main-menu ul {
-    display: none;
-    float: left;
-    position: absolute;
-    top: 20px;
-    left: 0;
-    z-index: 4;
-    background: #000;
-    width: 100%;
-    opacity: .8;
-    color: #fff;
-    padding: 20px 20px 30px;
-  }
-  THREE PART SECTION FOR SMALLEST SCREENS 
-
-.div_right {
-  background-color: #0099ff;
-  height: 200px;
-  overflow: hidden;
-  }
-  .div_right img{
-    position: relative;
-    padding-bottom: 20px;
-    padding-bottom: 300px;
-  }
-  
-  .div_left {
-  background-color: #0099ff;
-  height: 200px;
-  overflow: hidden;
-  }
-  .div_left img{
-    position: relative;
-    padding-bottom: 300px;
-  }
-  
-  .div_middle {
-  background-color: #24478f;
-  height: 200px;
-  overflow: hidden;
-  }
-  .div_middle img {
-    position: relative;
-    padding-bottom: 300px;
-  }
-  /* 3 PART SECTION FOR SMALLEST SCREENS ENDS HERE*/
 
 @media (max-width: 575.98px) {
     .main-menu ul {
@@ -618,7 +462,7 @@ textarea:focus {
 
 .header-area {
     padding: 20px 0;
-    background: #000;
+    background: #007bff;
     color: #fff;
     position: absolute;
     opacity: .7;
@@ -682,18 +526,19 @@ textarea:focus {
 
 .banner-area {
     padding: 250px 0 350px;
-    background-color: #b0b0b0;
+    background: #cac9c9;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../images/web01.jpg");
+    background-image: url("../images/H3.jpg");
     background-size: cover;
     position: relative;
     height: 400px;
+    color: #fff;
 }
 
-.banner-area .prime-color {
-    color: rgb(165, 42, 42);
-}
+/* .banner-area .prime-color {
+    color: #007bff;
+} */
 
 .banner-area .style-change {
     font-style: normal;
@@ -1267,7 +1112,7 @@ textarea:focus {
 /* ADMIN AREA ENDS */
 
 .reservation-area {
-    background-image: url("../images/web_203.jpg");
+    background-image: url("../images/04.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1312,7 +1157,7 @@ textarea:focus {
 }
 
 .testimonial-area {
-    background-image: url("../images/testimonial-bg.jpg");
+    background-image: url("../images/H1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1518,7 +1363,9 @@ textarea:focus {
 
 .footer-widget {
     background-image: url("../images/web_23.jpg");
-    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .footer-widget .single-widget1 {
@@ -1553,6 +1400,7 @@ textarea:focus {
     color: #fff;
     height: 40px;
     align-content: center;
+    overflow: hidden;
 }
 
 .footer-copyright .color {
@@ -4001,154 +3849,113 @@ h6 {
     color: #007bff;
 }
 
+/* FAQ STARTS */
 
-/* STORE CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.box-element {
-    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 10px;
-}
-
-.thumbnail {
+.section{
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     width: 100%;
-    height: 200px;
-    -webkit-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
-    -moz-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
-    box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    margin: 0 auto;
 }
 
-.product {
-    border-radius: 0 0 4px 4px;
-}
-
-.bg-dark {
-    background-color: #4f868c!important;
-}
-
-#cart-icon {
-    width: 25px;
-    display: inline-block;
-    margin-left: 15px;
-}
-
-#cart-total {
-    display: block;
+.section h1{
+    margin-top: 40px;
+    font-size: 40px;
     text-align: center;
-    color: #fff;
-    background-color: #007bff;
-    width: 20px;
-    height: 25px;
-    border-radius: 50%;
-    font-size: 14px;
-    float: right;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #007bff;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.col-lg-4,
-.col-lg-6,
-.col-lg-8,
-.col-lg-12 {
-    margin-top: 10px;
-}
-
-.btn {
-    border-radius: 0;
-}
-
-.row-image {
-    width: 100px;
-}
-
-.form-field {
-    width: 250px;
-    display: inline-block;
-    padding: 5px;
-}
-
-.cart-row {
-    display: flex;
-    align-items: flex-stretch;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ececec;
-}
-
-.quantity {
-    display: inline-block;
-    font-weight: 700;
-    padding-right: 10px;
-}
-
-.chg-quantity {
-    width: 12px;
-    cursor: pointer;
+.container-1{
     display: block;
-    margin-top: 5px;
-    transition: .1s;
+    float: left;
+    width: 50%;
+    padding: 20px 40px;
 }
 
-.chg-quantity:hover {
-    opacity: .6;
+.container-2{
+    display: block;
+    float: right;
+    width: 50%;
+    padding: 20px 40px;
 }
 
-.hidden {
-    display: none!important;
+.faq{
+    max-width: 100%;
+    margin-bottom: 50px;
+    padding: 25px 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px 5px #aaa;
+    border-radius: 10px;
 }
 
-@media (max-width: 992px) {
-    #cart-total {
-        float: none;
-        display: inline-block;
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 2px;
+}
+
+.question h2{
+    font-size: 22px;
+    color: #007bff;
+}
+
+.question i{
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+.answer p{
+    padding-top: 20px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+.faq.active .answer{
+    max-height: 250px;
+}
+
+@media screen and (max-width: 850px){
+
+    .section{
+        display: table;
     }
+
+    .container-1{
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .container-2{
+        width: 100%;
+        padding: 0 20px; 
+    }
+
+    .question h2{
+        font-size: 17px;
+    }
+
+    .answer p{
+        font-size: 14px;
+    }
+    
 }
 
-
-/* STORE CSS ENDS */
-
-
-/* FAQs STARTS */
-
-.text-secondary {
-    color: #3d5d6f;
-}
-
-.fa,
-.fas {
-    font-family: 'FontAwesome';
-    font-weight: 400;
-    font-size: 1.2rem;
-    font-style: normal;
-}
-
-.right-0 {
-    right: 0;
-}
-
-.top-0 {
-    top: 0;
-}
-
-.h-100 {
-    height: 100%;
-}
-
-a.text-secondary:focus,
-a.text-secondary:hover {
-    text-decoration: none;
-    color: #22343e;
-}
-
-#accordion .fa-plus {
-    transition: -webkit-transform 0.25s ease-in-out;
-    transition: transform 0.25s ease-in-out;
-    transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
-}
-
-#accordion a[aria-expanded=true] .fa-plus {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-
-/* FAQs ENDS */
+/* FAQ ENDS */
