@@ -141,7 +141,7 @@ h2 {
 }
 
 h3 {
-    color: #fff;
+    color: #000;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px !important;
     font-weight: 500;
@@ -151,7 +151,6 @@ h4 {
     color: #000;
     font-family: arial;
     font-size: 24px !important;
-    font-style: italic;
     text-transform: capitalize;
 }
 
@@ -171,7 +170,6 @@ h6 {
     text-transform: uppercase;
     animation-timing-function: ease-out;
     background: #000;
-    opacity: .7;
     height: 40px;
     margin-left: 35%;
     padding-top: 10px;
@@ -267,12 +265,11 @@ textarea:focus {
         display: none;
         float: left;
         position: absolute;
-        color: #fff;
+        color: #000;
         top: 20px;
         left: 0;
         z-index: 4;
-        background: #000;
-        opacity: .9;
+        background: #007bff;
         width: 100%;
         padding: 20px 20px 30px;
     }
@@ -288,9 +285,9 @@ textarea:focus {
         top: 20px;
         left: 0;
         z-index: 4;
-        background: #000;
+        background: #007bff;
         width: 100%;
-        color: #fff;
+        color: #000;
         padding: 20px 20px 30px;
     }
 }
@@ -298,19 +295,19 @@ textarea:focus {
 .main-menu ul li {
     display: inline;
     position: relative;
-    color: #fff;
+    color: #000;
 }
 
 #login-btn {
-    border: 2px solid #007bff;
+    border: 2px solid #000;
     border-radius: .9em;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
 #login-btn:hover {
-    background-color: #007bff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -332,7 +329,7 @@ textarea:focus {
 }
 
 .main-menu ul li a {
-    color: #fff;
+    color: #000;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-size: 14px;
@@ -342,27 +339,23 @@ textarea:focus {
 }
 
 .main-menu ul li a:hover {
-    color: #007bff;
+    color: #fff;
 }
 
 .main-menu ul li:hover ul.sub-menu {
-    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
-    opacity: .9;
     visibility: visible;
     top: 100%;
-    background: #000;
+    background: #007bff;
 }
 
 .main-menu ul li ul.sub-menu {
     padding: 10px;
-    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-    opacity: 0;
     visibility: hidden;
     position: absolute;
     top: 150%;
     left: 30px;
     width: 250px;
-    background: #f9f9ff;
+    background: #007bff
     z-index: 2;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -382,7 +375,7 @@ textarea:focus {
 }
 
 .main-menu ul li ul.sub-menu li a:hover {
-    color: #007bff;
+    color: #fff;
 }
 
 .main-menu2 ul a {
@@ -465,7 +458,7 @@ textarea:focus {
     background: #007bff;
     color: #fff;
     position: absolute;
-    opacity: .7;
+    opacity: .9;
     top: 20px;
     left: 50%;
     width: 80%;
@@ -542,6 +535,7 @@ textarea:focus {
 
 .banner-area .style-change {
     font-style: normal;
+    
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -592,7 +586,6 @@ textarea:focus {
 
 .welcome-area .style-change {
     color: #007bff;
-    font-style: italic;
 }
 
 .welcome-area .welcome-img {
@@ -2995,7 +2988,7 @@ h6 {
 }
 
 .progress-table .table-row .percentage .progress .progress-bar.color-3 {
-    background-color: #f09359;
+    background-color: #007bff;
 }
 
 .progress-table .table-row .percentage .progress .progress-bar.color-4 {
